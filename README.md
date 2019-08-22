@@ -2,4 +2,4 @@
 
 ## Tela do meu projeto
 
-![Tarefa implementada](specs/greencity.gif)
+![Tarefa implementada](specs/greencity.jpg)
