@@ -1,32 +1,73 @@
-// Adicionamos nosso código dentro de uma função anônima para evitar
-// variáveis globais.
-(function() {
-  // Elemento principal do formulário
-  const contactForm = document.getElementById('contact');
+function validaEmail(email){
+  if(email == null || email.indexOf('@') == -1 || email.indexOf('.') == -1 ){
+    return false;
+  }
+  return true;
+}
+function validaNome(nome){
+  if (nome < 7 || nome == null) {
+    return false;
+  }
+  return true;
+}
+function validaMensagem(mensagem){
+  if (messageValue == 0) {
+    return false;
+  }
+  return true;
+}
+function validaEnvio(nome, email, mensagem){
+  var nome = validaNome(nome);
+  var email = validaEmail(email);
+  var mensagem = validaMensagem(mensagem);
 
-  // Campos do formulário
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const messageInput = document.getElementById('message');
+    if (!nome == true) {
+      nameInput.focus();
+      document.getElementById('nameSpan').innerHTML = "Preencha o Nome + Sobrenome";
+    }
+    if (!email == true) {
+      emailInput.focus();
+      document.getElementById('emailSpan').innerHTML = "Insira um e-mail válido";
+    }
+    if (!mensagem == true) {
+      messageInput.focus();
+      document.getElementById('mensagemSpan').innerHTML = "Escreva uma mensagem";
+    }
+    console.log(nome);
+    console.log(email);
+    console.log(mensagem);
 
-  // "addEventListener" instrui o navegador a executar uma função sempre
-  // que um evento específico acontece. Nesse caso, a função abaixo será
-  // executada toda vez que o botão de envio for pressionado.
-  contactForm.addEventListener('submit', function() {
-    // A propriedade "value" contém o valor atual de um input ou textarea
-    const nameValue = nameInput.value;
+    if (nome == true && email == true && mensagem == true) {
+      return true;
+    }
+    return false;
 
-    // A propriedade "length" contém o tamanho (em caracteres) de uma
-    // uma string. Toda string contém essa propriedade.
-    const nameLength = nameValue.length;
+}
 
-    // "window" é um objeto global que representa a janela (ou aba) do
-    // navegador que está executando o código do seu site. O método
-    // "alert" simplesmente mostra um aviso para o usuário contendo a
-    // mensagem provida.
-    window.alert(`Botão enviar clicado! Conteúdo do campo nome: ${nameValue} (${nameLength} caracteres)`);
 
-    // Altere e complete essa função para validar os campos do formulário
-    // de acordo com as especificações do teste. Boa sorte!
+  var btnForm = document.getElementById('btnSend');
+
+  var nameInput = document.getElementById('name');
+  var emailInput = document.getElementById('email');
+  var messageInput = document.getElementById('message');
+
+  var nameValue;
+  var emailValue;
+  var messageValue;
+
+  btnForm.addEventListener('click', function() {
+    document.getElementById('nameSpan').innerHTML = "";
+    document.getElementById('emailSpan').innerHTML = "";
+    document.getElementById('mensagemSpan').innerHTML = "";
+    nameValue = nameInput.value;
+    emailValue = emailInput.value;
+    messageValue = messageInput.value;
+
+    if(validaEnvio(nameValue.length, emailValue, messageValue.length)){
+      window.alert(`Muito obrigado! ${nameValue}`);
+      document.getElementById('name').value = "";
+      document.getElementById('email').value = "";
+      document.getElementById('message').value = "";
+    }
+
   });
-})();

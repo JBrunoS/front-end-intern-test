@@ -4,9 +4,137 @@
 /* font-family: 'Open Sans', sans-serif; */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
 
+*{
+  box-sizing: border-box;
+}
 
 h1 {
     font-family: 'Cookie', cursive;
     font-size: 71px;
-    color: purple;
+    color: #e4edce;
+    line-height: 0.7;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 30px;
+}
+span {
+  background-color: red;
+  border-radius: 4px;
+  font-size: 18px;
+  color: white;
+}
+
+body {
+  background-image: url("assets/04-BG.png");
+  margin: 0px;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 22px;
+  box-shadow: 0 5px #4a8978;
+  background-color: #71a397;
+  color: #feffff;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type=text], textarea{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-color: none;
+}
+
+.header{
+  background-color:#acd0b6;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-login {
+  max-width: 450px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+/* Web Responsive - mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* Web Responsive - For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+/*Responsive Web*/
+.column {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .column {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .column {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .column {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .column {
+    max-width: 1140px;
+  }
 }
